@@ -3,6 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { StackNavigator } from './StackNavigator';
 import { globalColors } from '../theme/theme';
+import { CustomDrawerContent } from '../components/shared/CustomDrawerContent';
 
 export type DrawerParams = {
   StackNavigator: undefined;
@@ -14,18 +15,19 @@ const Drawer = createDrawerNavigator<DrawerParams>();
 export const SideMenuNavigator = () => {
   return (
     <Drawer.Navigator
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{
         headerShown: false,
         drawerType: 'slide',
         drawerStyle: {
           backgroundColor: globalColors.dark,
-          width: 240,
+          width: 260,
         },
         drawerActiveTintColor: globalColors.primary,
-        drawerInactiveTintColor: 'rgba(255,255,255,0.6)',
-        drawerActiveBackgroundColor: 'rgba(112,55,235,0.15)',
+        drawerInactiveTintColor: 'rgba(0,0,0,0.6)',
+        drawerActiveBackgroundColor: 'rgba(112,55,235,0.1)',
         drawerLabelStyle: {
-          fontSize: 16,
+          fontSize: 15,
           fontWeight: '600',
           marginLeft: -10,
         },
@@ -37,12 +39,12 @@ export const SideMenuNavigator = () => {
       <Drawer.Screen
         name="StackNavigator"
         component={StackNavigator}
-        options={{ title: 'Home', drawerIcon: ({ color }) => null }}
+        options={{ title: 'Home' }}
       />
       <Drawer.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{ title: 'Profile', headerShown: true, drawerIcon: ({ color }) => null }}
+        options={{ title: 'Profile', headerShown: true }}
       />
     </Drawer.Navigator>
   );
