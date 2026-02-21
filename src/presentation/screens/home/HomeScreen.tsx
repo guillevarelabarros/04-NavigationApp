@@ -24,10 +24,6 @@ export const HomeScreen = () => {
   return (
     <View style={globalStyles.container}>
       <PrimaryButton
-        label="☰ Abrir menú"
-        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-      />
-      <PrimaryButton
         label="Productos"
         onPress={() => navigation.navigate('Products')}
       />
