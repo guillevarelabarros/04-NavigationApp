@@ -1,14 +1,17 @@
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from 'react-native';
 import { SideMenuNavigator } from './presentation/routes/SideMenuNavigator';
-// import { StackNavigator } from './presentation/routes/StackNavigator';
 
 export const App = () => {
   return (
-    <NavigationContainer>
-      {/* <StackNavigator/> */}
-      <SideMenuNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent />
+      <NavigationContainer>
+        <SideMenuNavigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
