@@ -17,7 +17,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={ {
-      headerShown: true,
+      headerShown: false,
       headerShadowVisible: false,
       headerTitleAlign: 'center',
     } }

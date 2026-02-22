@@ -18,6 +18,7 @@ export const SideMenuNavigator = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawerContent {...props} />}
+      initialRouteName="Tabs"
       screenOptions={{
         headerShown: false,
         drawerType: 'slide',
