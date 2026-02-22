@@ -2,11 +2,13 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { StackNavigator } from './StackNavigator';
+import { BottomTabsNavigator } from './BottomTabsNavigator';
 import { globalColors } from '../theme/theme';
 import { CustomDrawerContent } from '../components/shared/CustomDrawerContent';
 
 export type DrawerParams = {
   StackNavigator: undefined;
+  Tabs: undefined;
   Profile: undefined;
 };
 
@@ -40,6 +42,11 @@ export const SideMenuNavigator = () => {
         name="StackNavigator"
         component={StackNavigator}
         options={{ title: 'Home' }}
+      />
+      <Drawer.Screen
+        name="Tabs"
+        component={BottomTabsNavigator}
+        options={{ title: 'Tabs' }}
       />
       <Drawer.Screen
         name="Profile"
