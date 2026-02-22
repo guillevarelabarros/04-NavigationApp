@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { globalColors } from '../../theme/theme';
 
 export const HamburgerMenu = () => {
   const navigation = useNavigation();
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   bar: {
     width: 22,
     height: 2,
-    backgroundColor: '#22223b',
+    backgroundColor: globalColors.dark,
     borderRadius: 2,
   },
 });

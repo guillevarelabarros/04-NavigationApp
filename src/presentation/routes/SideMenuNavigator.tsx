@@ -3,6 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { StackNavigator } from './StackNavigator';
 import { BottomTabsNavigator } from './BottomTabsNavigator';
+import { IonIcon } from '../components/shared/IonIcon';
 import { globalColors } from '../theme/theme';
 import { CustomDrawerContent } from '../components/shared/CustomDrawerContent';
 
@@ -42,17 +43,33 @@ export const SideMenuNavigator = () => {
       <Drawer.Screen
         name="StackNavigator"
         component={StackNavigator}
-        options={{ title: 'Home' }}
+        options={{
+          title: 'Home',
+          drawerIcon: ({ color, size, focused }) => (
+            <IonIcon name={focused ? 'home' : 'home-outline'} size={size} color={color} />
+          ),
+        }}
       />
       <Drawer.Screen
         name="Tabs"
         component={BottomTabsNavigator}
-        options={{ title: 'Tabs' }}
+        options={{
+          title: 'Tabs',
+          drawerIcon: ({ color, size, focused }) => (
+            <IonIcon name={focused ? 'apps' : 'apps-outline'} size={size} color={color} />
+          ),
+        }}
       />
       <Drawer.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{ title: 'Profile', headerShown: true }}
+        options={{
+          title: 'Profile',
+          headerShown: true,
+          drawerIcon: ({ color, size, focused }) => (
+            <IonIcon name={focused ? 'person' : 'person-outline'} size={size} color={color} />
+          ),
+        }}
       />
     </Drawer.Navigator>
   );

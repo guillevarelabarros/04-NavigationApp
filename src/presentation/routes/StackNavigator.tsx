@@ -16,13 +16,13 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 
 export const StackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={ {
-      headerShown: false,
-      headerShadowVisible: false,
-      headerTitleAlign: 'center',
-    } }
-      
-      initialRouteName="Home">
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+        headerShadowVisible: false,
+        headerTitleAlign: 'center',
+      }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Products" component={ProductsScreen} />
       <Stack.Screen name="Product" component={ProductScreen} />

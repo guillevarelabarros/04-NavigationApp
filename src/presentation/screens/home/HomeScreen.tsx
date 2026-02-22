@@ -1,28 +1,17 @@
-
-import React, { useEffect } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import { globalStyles } from '../../theme/theme';
-import { DrawerActions, type NavigationProp, useNavigation } from '@react-navigation/native';
+import { type NavigationProp, useNavigation } from '@react-navigation/native';
 import { PrimaryButton } from '../../components/shared/PrimaryButton';
 import { type RootStackParams } from '../../routes/StackNavigator';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export const HomeScreen = () => {
-
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
-
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <Pressable onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Text>Menu</Text>
-        </Pressable>
-      ),
-    });
-  }, []);
-
+  const { top } = useSafeAreaInsets();
 
   return (
-    <View style={globalStyles.container}>
+    <View style={[globalStyles.container, { paddingTop: top + 20 }]}>
       <PrimaryButton
         label="Productos"
         onPress={() => navigation.navigate('Products')}
