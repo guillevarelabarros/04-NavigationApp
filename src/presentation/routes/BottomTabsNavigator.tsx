@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Tab1Screen } from '../screens/tabs/Tab1Screen';
 import { Tab2Screen } from '../screens/tabs/Tab2Screen';
 import { Tab3Screen } from '../screens/tabs/Tab3Screen';
+import { HamburgerMenu } from '../components/shared/HamburgerMenu';
 
 export type BottomTabParams = {
   Tab1: undefined;
@@ -17,6 +18,7 @@ export const BottomTabsNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: true,
+        headerLeft: () => <HamburgerMenu />,
         tabBarActiveTintColor: '#7037EB',
         tabBarInactiveTintColor: 'rgba(0,0,0,0.4)',
         tabBarStyle: {
