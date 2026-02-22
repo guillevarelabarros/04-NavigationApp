@@ -45,12 +45,12 @@ export const BottomTabsNavigator = () => {
       <Tab.Screen
         name="Tab2"
         component={TopTabsNavigator}
-        options={{ title: 'Top Tabs', headerShown: false, tabBarIcon: tabIcon('layers', 'layers-outline') }}
+        options={{ title: 'Top Tabs', tabBarIcon: tabIcon('layers', 'layers-outline') }}
       />
       <Tab.Screen
         name="Tab3"
         component={StackNavigator}
-        options={{ title: 'Home', headerShown: false, tabBarIcon: tabIcon('home', 'home-outline') }}
+        options={{ title: 'Home', tabBarIcon: tabIcon('home', 'home-outline') }}
       />
     </Tab.Navigator>
   );
